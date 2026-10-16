@@ -1,0 +1,154 @@
+{
+  "title": "Lab 7 - Grocery List",
+  "cases": [
+    {
+      "type": "header",
+      "name": "Header is filled in"
+    },
+    {
+      "type": "output",
+      "name": "Repeated apples, oranges reduced",
+      "stdin": [
+        "apples",
+        "4",
+        "oranges",
+        "12",
+        "milk",
+        "2",
+        "apples",
+        "3",
+        "done"
+      ],
+      "expect": [
+        "Item: Quantity: Item: Quantity: Item: Quantity: Item: Quantity: Item: apples: 7",
+        "oranges: 12",
+        "milk: 2",
+        "apples: 7",
+        "oranges: 7",
+        "milk: 2"
+      ]
+    },
+    {
+      "type": "output",
+      "name": "No apples, oranges removed",
+      "stdin": [
+        "bread",
+        "1",
+        "oranges",
+        "5",
+        "done"
+      ],
+      "expect": [
+        "Item: Quantity: Item: Quantity: Item: bread: 1",
+        "oranges: 5",
+        "Are you sure you don't want apples?",
+        "bread: 1"
+      ]
+    },
+    {
+      "type": "output",
+      "name": "Too many apples",
+      "stdin": [
+        "apples",
+        "8",
+        "eggs",
+        "12",
+        "apples",
+        "6",
+        "done"
+      ],
+      "expect": [
+        "Item: Quantity: Item: Quantity: Item: Quantity: Item: apples: 14",
+        "eggs: 12",
+        "That's too many apples!",
+        "apples: 14",
+        "eggs: 12"
+      ]
+    },
+    {
+      "type": "comments",
+      "name": "Code is commented",
+      "min": 3
+    }
+  ],
+  "challenges": [
+    {
+      "title": "Challenge - Store Inventory",
+      "file": "challenges/inventory.py",
+      "cases": [
+        {
+          "type": "output",
+          "name": "Apple restocked, 10% inflation",
+          "stdin": [
+            "apple",
+            "1.50",
+            "10",
+            "pear",
+            "2",
+            "5",
+            "apple",
+            "4",
+            "done",
+            "10"
+          ],
+          "expect": [
+            "Item: Price: Quantity: Item: Price: Quantity: Item: Quantity to add: Item: Item | Price | Quantity | Total Value",
+            "apple | 1.5 | 14 | 21.0",
+            "pear | 2.0 | 5 | 10.0",
+            "Grand total: 31.0",
+            "Inflation %: New grand total: 34.1"
+          ]
+        },
+        {
+          "type": "output",
+          "name": "One item, 8% inflation",
+          "stdin": [
+            "milk",
+            "4.25",
+            "4",
+            "done",
+            "8"
+          ],
+          "expect": [
+            "Item: Price: Quantity: Item: Item | Price | Quantity | Total Value",
+            "milk | 4.25 | 4 | 17.0",
+            "Grand total: 17.0",
+            "Inflation %: New grand total: 18.36"
+          ]
+        },
+        {
+          "type": "output",
+          "name": "Three items, no inflation",
+          "stdin": [
+            "bread",
+            "2.5",
+            "2",
+            "eggs",
+            "3.75",
+            "1",
+            "rice",
+            "6",
+            "3",
+            "eggs",
+            "3",
+            "done",
+            "0"
+          ],
+          "expect": [
+            "Item: Price: Quantity: Item: Price: Quantity: Item: Price: Quantity: Item: Quantity to add: Item: Item | Price | Quantity | Total Value",
+            "bread | 2.5 | 2 | 5.0",
+            "eggs | 3.75 | 4 | 15.0",
+            "rice | 6.0 | 3 | 18.0",
+            "Grand total: 38.0",
+            "Inflation %: New grand total: 38.0"
+          ]
+        },
+        {
+          "type": "comments",
+          "name": "Code is commented",
+          "min": 3
+        }
+      ]
+    }
+  ]
+}

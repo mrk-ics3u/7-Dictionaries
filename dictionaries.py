@@ -11,11 +11,11 @@
 # --- Lists compared to dictionaries ------------------------------------------
 # list (elements)
 fruits = ['apple', 'pear', 'peach', 'banana', 'pineapple', 'apple']
-print(fruits[0])
+print(fruits[4])
 
 # dictionary (key: value)
-fruit_inventory = {'apple': 1, 'pear': 4, 'peach': 9, 'banana': 1, 'pineapple': 3}
-print(fruit_inventory['pineapple'])
+fruit_inventory = {'apple': 2, 'pear': 4, 'peach': 9, 'banana': 1, 'pineapple': 3}
+print(fruit_inventory['pear'])
 
 # adding a new key: value
 fruit_inventory['grapes'] = 5
@@ -26,12 +26,14 @@ print(fruit_inventory['grapes'])
 #print(fruit_inventory['mango'])
 
 
-# --- Adding, changing, using and removing ------------------------------------
-fruit_inventory = {'apple': 10, 'pear': 4, 'peach': 9, 'banana': 24, 'pineapple': 3}
+# # --- Adding, changing, using and removing ------------------------------------
+fruit_inventory = {'apple': 10, 'pear': 4, 'peach': 9, 'banana': 4, 'pineapple': 3}
 print(fruit_inventory['apple'])
 
 fruit_inventory['kiwi'] = 15    # adds a new key-value pair
 fruit_inventory['apple'] += 12  # changes an existing value
+
+print(fruit_inventory)
 
 if fruit_inventory['banana'] < 10:
     print("Time to order more bananas!")
@@ -81,15 +83,17 @@ for fruit, quantity in fruit_inventory.items():
     print(f"{fruit}: {quantity}")
 
 # changing 'quantity' did not change the dictionary
+# modification of lists and dictionaries only happens when directly accessing
+# or modifying the list/dictionary
 print(fruit_inventory)
 print()
 
 
 # --- Nested dictionaries -----------------------------------------------------
 fruit_details = {
-    'apple': {'color': 'red', 'taste': 'sweet', 'quantity': 10},
+    'apple': {'color': ['red','orange','yellow'], 'taste': 'sweet', 'quantity': 10},
     'lemon': {'color': 'yellow', 'taste': 'sour', 'quantity': 5}
 }
 
-print(fruit_details['apple']['quantity'])
+print(fruit_details['apple']['color'][1])
 print()
